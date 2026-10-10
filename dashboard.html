@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="app">
+        <aside class="sidebar">
+            <h2>EMS</h2>
+            <nav>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="#employees">Employees</a>
+                <a href="#addEmployee">Add Employee</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p id="welcomeMessage">Welcome back!</p>
+                </div>
+            </header>
+
+            <section class="summary">
+                <div class="stat-card">
+                    <p>Total Employees</p>
+                    <h2 id="totalEmployees">0</h2>
+                </div>
+            </section>
+
+            <section class="panel" id="addEmployee">
+                <h2 id="formTitle">Add Employee</h2>
+
+                <form id="employeeForm">
+                    <input type="hidden" id="employeeId">
+
+                    <label for="name">Name</label>
+                    <input id="name" required maxlength="100">
+
+                    <label for="email">Email</label>
+                    <input id="email" type="email"
+                           required maxlength="255">
+
+                    <label for="department">Department</label>
+                    <select id="department" required>
+                        <option value="">Select Department</option>
+                        <option>HR</option>
+                        <option>IT</option>
+                        <option>Finance</option>
+                        <option>Marketing</option>
+                        <option>Sales</option>
+                    </select>
+
+                    <label for="phone">Phone Number</label>
+                    <input id="phone" type="tel"
+                           required maxlength="10">
+
+                    <div class="form-actions">
+                        <button type="submit" id="saveBtn">
+                            Add Employee
+                        </button>
+                        <button type="button" id="cancelBtn"
+                                hidden>Cancel</button>
+                    </div>
+
+                    <p id="formMessage" role="status"></p>
+                </form>
+            </section>
+
+            <section class="panel" id="employees">
+                <h2>Employee List</h2>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Department</th>
+                                <th>Phone number</th>
+                                <th>employeeId</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employeeTable"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
